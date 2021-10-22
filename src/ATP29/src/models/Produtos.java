@@ -12,7 +12,19 @@ public class Produtos extends Base {
     public String nome;
     public Double preco;
     public String descricao;
-    public Categorias categorias;
+    public Categorias categorias;  //composicao
+
+    @Override
+    public boolean equals (Object obj) {
+        if (obj instanceof Produtos) {
+            Produtos outra = (Produtos)obj;
+            if(this.id == outra.id){
+                return true;
+            }
+        }
+        return false;
+    }
+
 
     @Override
     public String toString(){
@@ -23,6 +35,4 @@ public class Produtos extends Base {
                 " " +
                 "\n";
     }
-
-
 }

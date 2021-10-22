@@ -1,4 +1,6 @@
 package controller;
 
-public class CategoriasController {
+import models.Categorias;
+
+public class CategoriasController extends BaseController <Categorias> {
 }

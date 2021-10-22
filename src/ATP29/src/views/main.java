@@ -3,9 +3,12 @@ package views;
 import controller.ProdutosController;
 import models.Produtos;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class main {
+    static Scanner sc = new Scanner(System.in);
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Produtos produtos = new Produtos();
@@ -49,17 +52,17 @@ public class main {
                     listar(produtosController);
                     break;
 
-            case 2:
-                System.out.println("------------------ Atualizar ------------------ \n");
+                case 2:
+                    System.out.println("------------------ Atualizar ------------------ \n");
+                    produtosController.update(p2);
+                    listar(produtosController);
+                    break;
 
-
-                break;
-
-            case 3:
-                System.out.println("------------------ Deletar ------------------ \n");
-                produtosController.delete(p3);
-
-                break;
+                case 3:
+                    System.out.println("------------------ Deletar ------------------ \n");
+                    produtosController.delete(p3);
+                    listar(produtosController);
+                    break;
 
                 case 4:
                     System.out.println("------------------ Verificar ------------------ \n");
@@ -75,5 +78,23 @@ public class main {
 
 
 
+    private static int menu(Scanner sc) {
+        System.out.println("Digite uma das opções abaixo: ");
+        System.out.println("\n-------------------MENU---------------------\n" +
+                "\n1-Adicionar: " +
+                "\n2-Atualizar" +
+                "\n3-Deletar" +
+                "\n4-Existe  \n");
+
+        int opcao = Integer.parseInt(sc.next());
+        return opcao;
+    }
+
+    private static void listar ( ProdutosController controller){
+        ArrayList<Produtos> lista = controller.listar();
+        for(Produtos produtos : lista){
+            System.out.print(produtos);
+        }
+    }
 
 }

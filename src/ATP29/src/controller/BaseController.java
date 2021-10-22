@@ -34,4 +34,9 @@ public class BaseController<T> {
         return this.dados.contains(obj);
     }
 
+    public ArrayList<T> listar(){
+        return this.dados;
+    }
+
+
 }

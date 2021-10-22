@@ -37,7 +37,6 @@ public class Produtos extends Base{
                 "\n\tNome = " + this.nome +
                 "\n\tPreco = " + this.preco +
                 "\n\tDescricao =  " + this.descricao +
-                " " +
                 "\n";
     }
 }

@@ -8,7 +8,9 @@
 
 package models;
 
-public class Produtos extends Base {
+import controller.BaseController;
+
+public class Produtos extends BaseController {
     public String nome;
     public Double preco;
     public String descricao;

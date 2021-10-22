@@ -1,8 +1,10 @@
 package controller;
 
+import models.Base;
+
 import java.util.ArrayList;
 
-public class BaseController<T> {
+public class BaseController<T> extends Base {
     private ArrayList<T> dados;
 
     public BaseController(){

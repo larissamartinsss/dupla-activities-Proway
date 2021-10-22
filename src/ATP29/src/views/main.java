@@ -34,27 +34,20 @@ public class main {
         p3.preco = 5000.00;
         p3.categorias.computadores = " Notebook i5 ";
 
-        imprimir(p1);
-        imprimir(p2);
-        imprimir(p3);
+        listar(produtosController);
 
-        System.out.println("Digite uma das opções abaixo: ");
-        System.out.println("\n---------------MENU----------------\n" +
-                "\n1-Adicionar: \n" +
-                "\n2-Atualizar" +
-                "\n3-Deletar" +
-                "\n4-Existe");
-        int opcao = Integer.parseInt(sc.next());
+        int opcao;
 
-        switch (opcao){
-            case 1:
-                System.out.println("------------------ Adicionar ------------------ \n");
-                produtosController.create(p1);
-                produtosController.create(p2);
-                produtosController.create(p3);
-
-
-                break;
+        do {
+            opcao = menu(sc);
+            switch (opcao) {
+                case 1:
+                    System.out.println("------------------ Adicionar ------------------ \n");
+                    produtosController.create(p1);
+                    produtosController.create(p2);
+                    produtosController.create(p3);
+                    listar(produtosController);
+                    break;
 
             case 2:
                 System.out.println("------------------ Atualizar ------------------ \n");
@@ -68,19 +61,18 @@ public class main {
 
                 break;
 
-            case 4:
-                System.out.println("------------------ Existir ------------------ \n");
+                case 4:
+                    System.out.println("------------------ Verificar ------------------ \n");
+                    produtosController.existe(p1);
+                    produtosController.existe(p2);
+                    produtosController.existe(p3);
+                    listar(produtosController);
+                    break;
+            }
 
-
-                break;
-        }
-
-
+        } while (opcao != 0);
     }
 
-    public static void imprimir(Object obj){
-        System.out.println(obj.toString());
-    }
 
 
 

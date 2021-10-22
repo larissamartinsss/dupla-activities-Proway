@@ -4,7 +4,7 @@ import models.Base;
 
 import java.util.ArrayList;
 
-public class BaseController<T> extends Base {
+public class BaseController<T> {
     private ArrayList<T> dados;
 
     public BaseController(){

@@ -8,13 +8,16 @@
 
 package models;
 
-import controller.BaseController;
 
-public class Produtos extends BaseController {
+public class Produtos extends Base{
     public String nome;
     public Double preco;
     public String descricao;
     public Categorias categorias;  //composicao
+
+    public Produtos() {
+        this.categorias = new Categorias();
+    }
 
     @Override
     public boolean equals (Object obj) {
